@@ -19,9 +19,9 @@ interface Evaluacion {
 
 export default function HU08_Evaluacion() {
   const [visitas] = useState<Visita[]>([
-    { id: 1, servicio: "Mantención preventiva", tecnico: "Carlos Rojas", fecha: "2025-06-11" },
-    { id: 2, servicio: "Revisión de ventilador", tecnico: "Laura Soto", fecha: "2025-06-01" },
-    { id: 3, servicio: "Cambio de batería", tecnico: "Mario Díaz", fecha: "2025-05-25" }, 
+    { id: 1, servicio: "Mantención preventiva", tecnico: "Carlos Rojas", fecha: "2025-07-09" },
+    { id: 2, servicio: "Revisión de ventilador", tecnico: "Laura Soto", fecha: "2025-07-05" },
+    { id: 3, servicio: "Cambio de batería", tecnico: "Mario Díaz", fecha: "2025-07-10" }, 
   ]);
 
   const [visitasRecientes, setVisitasRecientes] = useState<Visita[]>([]);
