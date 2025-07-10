@@ -26,13 +26,13 @@ export default function HU09_Contratos() {
     // Buscar el contrato firmado
     const contrato = contratos.find((c) => c.id === id);
     if (contrato) {
-      // Enviar correo al cliente
+      // Enviar correo al cliente usando Netlify Function
       try {
-        await fetch('/api/send-email', {
+        await fetch('/.netlify/functions/send-email', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            to: contrato.email || 'destinatario@correo.com', // Ajusta el campo según tu modelo
+            to: contrato.email,
             subject: `Contrato firmado: ${contrato.numero}`,
             html: `<h2>¡Su contrato ha sido firmado!</h2><p>Número: <b>${contrato.numero}</b></p><p>Producto: ${contrato.producto}</p><p>Fecha inicio: ${contrato.fechaInicio}</p><p>Fecha fin: ${contrato.fechaFin}</p><p>Gracias por confiar en PrestaMed.</p>`
           })
